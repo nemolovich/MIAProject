@@ -4,6 +4,9 @@ import java.util.List;
 
 public interface IBanque {
 
+/**
+ * /[PropertyAccessDeclaration]]
+  */
 	public List<IClient> getClients();
 	
 	public void setClients(List<IClient> newValue);

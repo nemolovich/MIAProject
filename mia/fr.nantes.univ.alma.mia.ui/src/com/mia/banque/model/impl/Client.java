@@ -7,8 +7,14 @@ import com.mia.banque.model.ICompte;
 
 public class Client implements IClient {
 
+/**
+ * /[PropertyDeclaration]]
+ */
 	private List<ICompte> listCompte;
-	
+
+/**
+ * /[PropertyAccess]]
+ */
 	public List<ICompte> getComptes() {
 		if (this.listCompte == null) {
 			this.listCompte = new ArrayList<ICompte>();
@@ -19,5 +25,5 @@ public class Client implements IClient {
 	public void setComptes(List<ICompte> newValue) {
 		this.listCompte = newValue;
 	}
-
+ 
 }

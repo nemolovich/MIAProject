@@ -3,15 +3,16 @@ Require-Bundle: org.eclipse.core.runtime,com.mia.studio.common;bundle-
  version=9.0.0,com.mia.studio.engine;bundle-version=9.0.0,com.mia.stud
  io.generation;bundle-version=9.0.0,com.mia.studio.generation.core;bun
  dle-version=9.0.0,com.mia.studio.kernel;bundle-version=9.0.0,com.mia.
- studio.transformation;bundle-version=9.0.0,org.eclipse.emf.common,org
- .eclipse.emf.ecore,org.eclipse.emf.ecore.xmi,org.eclipse.jdt.core,com
- .mia.formation.ui.metamodel,com.mia.formation.mvc.metamodel
+ studio.transformation;bundle-version=9.0.0,com.mia.studio.transformat
+ ion.core;bundle-version=9.0.0,org.eclipse.emf.common,org.eclipse.emf.
+ ecore,org.eclipse.emf.ecore.xmi,org.eclipse.jdt.core,com.mia.formatio
+ n.mvc.metamodel
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .,bin
 Bundle-Version: 1.0.0.qualifier
 Bundle-Name: fr.nantes.univ.alma.mia.generation
-Bundle-Activator: fr.nantes.univ.alma.mia.generation.Activator
 Bundle-ManifestVersion: 2
+Bundle-Activator: fr.nantes.univ.alma.mia.generation.Activator
 Bundle-SymbolicName: fr.nantes.univ.alma.mia.generation;singleton:=tru
  e
 Bundle-RequiredExecutionEnvironment: J2SE-1.5

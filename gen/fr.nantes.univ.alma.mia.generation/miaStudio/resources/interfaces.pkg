@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE PACKAGE SYSTEM "package.dtd">
-<PACKAGE NAME="interfaces" METAMODEL="MVC" NUMBER="14"
+<PACKAGE NAME="interfaces" METAMODEL="MVC" NUMBER="20"
  DOCUMENTATION="">
 	<fileHeader version="5" toolName="Mia-Generation" toolVersion="9.0.0"/>
+	<SCENARIO NAME="Client" VISIBILITY="public" META_OBJECT="Model" CATEGORY="default" DOCUMENTATION="">
+		<SERVICE_CALL NAME="ownedElements" PACKAGE="System" META_OBJECT="Model"/>
+		<GENERATION_STEP TYPE="FileTemplate" PACKAGE="interfaces" META_OBJECT="Model" CATEGORY="interfaces" NAME="InterfaceCreation" PARAM_COUNT="0"/>
+		<GENERATION_STEP TYPE="FileTemplate" PACKAGE="interfaces" META_OBJECT="Model" CATEGORY="implementation" NAME="ModelImplementation" PARAM_COUNT="0"/>
+		<GENERATION_STEP TYPE="Scenario" PACKAGE="interfaces" META_OBJECT="Model" NAME="Compte"/>
+	</SCENARIO>
+	<SCENARIO NAME="Compte" VISIBILITY="public" META_OBJECT="Model" CATEGORY="default" DOCUMENTATION="">
+		<SERVICE_CALL NAME="ownedElements" PACKAGE="System" META_OBJECT="Model"/>
+		<GENERATION_STEP TYPE="FileTemplate" PACKAGE="interfaces" META_OBJECT="Model" CATEGORY="interfaces" NAME="InterfaceCreation" PARAM_COUNT="0"/>
+		<GENERATION_STEP TYPE="FileTemplate" PACKAGE="interfaces" META_OBJECT="Model" CATEGORY="implementation" NAME="ModelImplementation" PARAM_COUNT="0"/>
+		<GENERATION_STEP TYPE="Scenario" PACKAGE="interfaces" META_OBJECT="Model" NAME="Operation"/>
+	</SCENARIO>
 	<SCENARIO NAME="ModelCreation" VISIBILITY="public" META_OBJECT="Model" CATEGORY="default" DOCUMENTATION="">
 		<SERVICE_CALL NAME="current" PACKAGE="System" META_OBJECT="Model"/>
+		<GENERATION_STEP TYPE="FileTemplate" PACKAGE="interfaces" META_OBJECT="Model" CATEGORY="interfaces" NAME="InterfaceCreation" PARAM_COUNT="0"/>
+		<GENERATION_STEP TYPE="FileTemplate" PACKAGE="interfaces" META_OBJECT="Model" CATEGORY="implementation" NAME="ModelImplementation" PARAM_COUNT="0"/>
+		<GENERATION_STEP TYPE="Scenario" PACKAGE="interfaces" META_OBJECT="Model" NAME="Client"/>
+	</SCENARIO>
+	<SCENARIO NAME="Operation" VISIBILITY="public" META_OBJECT="Model" CATEGORY="default" DOCUMENTATION="">
+		<SERVICE_CALL NAME="ownedElements" PACKAGE="System" META_OBJECT="Model"/>
 		<GENERATION_STEP TYPE="FileTemplate" PACKAGE="interfaces" META_OBJECT="Model" CATEGORY="interfaces" NAME="InterfaceCreation" PARAM_COUNT="0"/>
 		<GENERATION_STEP TYPE="FileTemplate" PACKAGE="interfaces" META_OBJECT="Model" CATEGORY="implementation" NAME="ModelImplementation" PARAM_COUNT="0"/>
 	</SCENARIO>
@@ -45,6 +63,9 @@ import java.util.List;
 
 public interface I[[name]] {
 
+/**
+ * /[PropertyAccessDeclaration]]
+  */
 [[AttributeCreation]]
 
 }
@@ -101,10 +122,16 @@ import com.mia.banque.model.I[[name]];
 
 public class [[name]] implements I[[name]] {
 
+/**
+ * /[PropertyDeclaration]]
+ */
 [[ModelDeclaration]]
-	
-[[ModelAccess]]
 
+/**
+ * /[PropertyAccess]]
+ */
+[[ModelAccess]]
+ 
 }
 ]]></TEXT>
 		<PROPERTY NAME="Filename"/>
@@ -119,13 +146,64 @@ com/mia/banque/model/impl/[[name]].java
 return manager.apply(current.getOwnedElements(), "ModelAttImport");
 ]]></TEXT>
 	</TEXT_MACRO>
-	<SCRIPT NAME="InterfacesCreation" META_OBJECT="View" CATEGORY="interfaces" FILE_ENCODING="UTF-8" VISIBILITY="private">
+	<SCRIPT NAME="ModelPropertyAccess" META_OBJECT="Model" CATEGORY="implementation">
+		<TEXT><![CDATA[
+
+	private String get[[name]]() {
+		return this.[[name]];
+	}
+	
+	private void set[[name]](String newValue) {
+		this.[[name]] = newValue;
+	}
+	
+]]></TEXT>
+	</SCRIPT>
+	<SCRIPT NAME="ModelPropertyAccessDeclaration" META_OBJECT="Model" CATEGORY="interfaces">
+		<TEXT><![CDATA[
+	/**
+	 * Returns the [[name]] attribute of the current object
+	 */
+	private String get[[name]]();
+	/**
+	 * Set the [[name]] attribute from given new value
+	 */
+	private vois set[[name]](String newValue);
+]]></TEXT>
+	</SCRIPT>
+	<SCRIPT NAME="ModelPropertyDeclaration" META_OBJECT="Model" CATEGORY="implementation">
+		<TEXT><![CDATA[
+	private String [[name]];
+]]></TEXT>
+	</SCRIPT>
+	<TEXT_MACRO NAME="PropertyAccess" META_OBJECT="Model" CATEGORY="implementation" RETURN_TYPE_KIND="primitive" RETURN_TYPE_NAME="String">
+		<TEXT><![CDATA[
+return manager.apply(current.getProperties(), "ModelPropertyAccess");
+]]></TEXT>
+	</TEXT_MACRO>
+	<TEXT_MACRO NAME="PropertyAccessDeclaration" META_OBJECT="Model" CATEGORY="interfaces" RETURN_TYPE_KIND="primitive" RETURN_TYPE_NAME="String">
+		<TEXT><![CDATA[
+return manager.apply(current.getProperties(), "ModelPropertyAccessDeclaration");
+]]></TEXT>
+	</TEXT_MACRO>
+	<TEXT_MACRO NAME="PropertyDeclaration" META_OBJECT="Model" CATEGORY="implementation" RETURN_TYPE_KIND="primitive" RETURN_TYPE_NAME="String">
+		<TEXT><![CDATA[
+return manager.apply(current.getProperties(), "ModelPropertyDeclaration");
+]]></TEXT>
+	</TEXT_MACRO>
+	<SCRIPT NAME="InterfacesCreation" META_OBJECT="View" CATEGORY="interfaces" FILE_ENCODING="UTF-8" VISIBILITY="public">
 		<TEXT><![CDATA[
 package com.mia.banque.ui.view;
 
+/**
+ * 
+ * [[description]]
+ * 
+ * @author Brian GOHIER
+ */
 public interface I[[name]] {
 	
-	public void afficherClient();
+	
 	public void quitter();
 	
 }

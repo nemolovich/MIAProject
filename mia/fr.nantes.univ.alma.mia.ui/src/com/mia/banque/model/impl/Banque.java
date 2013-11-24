@@ -7,8 +7,14 @@ import com.mia.banque.model.IClient;
 
 public class Banque implements IBanque {
 
+/**
+ * /[PropertyDeclaration]]
+ */
 	private List<IClient> listClient;
-	
+
+/**
+ * /[PropertyAccess]]
+ */
 	public List<IClient> getClients() {
 		if (this.listClient == null) {
 			this.listClient = new ArrayList<IClient>();
@@ -19,5 +25,5 @@ public class Banque implements IBanque {
 	public void setClients(List<IClient> newValue) {
 		this.listClient = newValue;
 	}
-
+ 
 }

@@ -7,8 +7,14 @@ import com.mia.banque.model.IOperation;
 
 public class Operation implements IOperation {
 
+/**
+ * /[PropertyDeclaration]]
+ */
 
-	
 
+/**
+ * /[PropertyAccess]]
+ */
 
+ 
 }
