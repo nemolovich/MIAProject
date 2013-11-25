@@ -67,7 +67,9 @@ public class mvc_Model__ModelAttDeclaration_111426494 implements com.mia.studio.
 java.lang.StringBuffer _template_buffer = new java.lang.StringBuffer();
 _template_buffer.append("	private List<I");
 _template_buffer.append(manager.action(current, "name"));_template_buffer.append("> list");
-_template_buffer.append(manager.action(current, "name"));_template_buffer.append(";");
+_template_buffer.append(manager.action(current, "name"));_template_buffer.append("s;");
+_template_buffer.append('\n');
+
 return _template_buffer.toString();
 
 }

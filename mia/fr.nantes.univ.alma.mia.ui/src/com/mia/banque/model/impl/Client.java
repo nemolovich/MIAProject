@@ -5,25 +5,59 @@ import java.util.ArrayList;
 import com.mia.banque.model.IClient;
 import com.mia.banque.model.ICompte;
 
+
 public class Client implements IClient {
 
-/**
- * /[PropertyDeclaration]]
- */
-	private List<ICompte> listCompte;
+	private String nom;
+	private String prenom;
+	private String adresse;
 
-/**
- * /[PropertyAccess]]
- */
-	public List<ICompte> getComptes() {
-		if (this.listCompte == null) {
-			this.listCompte = new ArrayList<ICompte>();
-		}
-		return this.listCompte;
+	private List<ICompte> listComptes;
+
+
+	@Override
+	public String getNom() {
+		return this.nom;
 	}
 	
-	public void setComptes(List<ICompte> newValue) {
-		this.listCompte = newValue;
+	@Override
+	public void setNom(String nom) {
+		this.nom = nom;
 	}
- 
+
+	@Override
+	public String getPrenom() {
+		return this.prenom;
+	}
+	
+	@Override
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+	@Override
+	public String getAdresse() {
+		return this.adresse;
+	}
+	
+	@Override
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
+
+
+	@Override
+	public List<ICompte> getComptes() {
+		if (this.listComptes == null) {
+			this.listComptes = new ArrayList<ICompte>();
+		}
+		return this.listComptes;
+	}
+	
+	@Override
+	public void setComptes(List<ICompte> listComptes) {
+		this.listComptes = listComptes;
+	}
+
+
 }

@@ -5,25 +5,26 @@ import java.util.ArrayList;
 import com.mia.banque.model.IBanque;
 import com.mia.banque.model.IClient;
 
+
 public class Banque implements IBanque {
 
-/**
- * /[PropertyDeclaration]]
- */
-	private List<IClient> listClient;
 
-/**
- * /[PropertyAccess]]
- */
+	private List<IClient> listClients;
+
+
+
+	@Override
 	public List<IClient> getClients() {
-		if (this.listClient == null) {
-			this.listClient = new ArrayList<IClient>();
+		if (this.listClients == null) {
+			this.listClients = new ArrayList<IClient>();
 		}
-		return this.listClient;
+		return this.listClients;
 	}
 	
-	public void setClients(List<IClient> newValue) {
-		this.listClient = newValue;
+	@Override
+	public void setClients(List<IClient> listClients) {
+		this.listClients = listClients;
 	}
- 
+
+
 }

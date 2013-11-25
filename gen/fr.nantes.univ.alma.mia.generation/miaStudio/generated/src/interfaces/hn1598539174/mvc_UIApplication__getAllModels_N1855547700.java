@@ -13,14 +13,14 @@ import org.eclipse.emf.ecore.*;
 import org.eclipse.emf.ecore.util.*;
 
 @SuppressWarnings({"unused","unchecked","rawtypes","nls","serial",})
-public class mvc_Model__InterfaceCreation_220043860 implements com.mia.studio.kernel.compiler.CompiledAction {
+public class mvc_UIApplication__getAllModels_N1855547700 implements com.mia.studio.kernel.compiler.CompiledAction {
 
-	public mvc_Model__InterfaceCreation_220043860() {
+	public mvc_UIApplication__getAllModels_N1855547700() {
 		//Do nothing
 	}
 
 	//For internal use only
-	mvc_Model__InterfaceCreation_220043860(int anyInt, List anyList) {
+	mvc_UIApplication__getAllModels_N1855547700(int anyInt, List anyList) {
 		List<java.lang.Integer> otherList = anyList;
 		throw new java.lang.UnsupportedOperationException();
 	}
@@ -38,7 +38,7 @@ public class mvc_Model__InterfaceCreation_220043860 implements com.mia.studio.ke
 				throw new IllegalArgumentException(
 						String.format(
 								"Bad parameter type in call to %s. Found '%s' when expected '%s'.",
-								"InterfaceCreation", argument.getClass().getName(),
+								"getAllModels", argument.getClass().getName(),
 								expectedClass.getName()));
 			}
 		}
@@ -50,38 +50,21 @@ public class mvc_Model__InterfaceCreation_220043860 implements com.mia.studio.ke
 		return runAction(_action_parameters);
 	}
 
-	public String runAction(java.lang.Object[] _action_parameters) {
+	public Object runAction(java.lang.Object[] _action_parameters) {
 		if (_action_parameters.length != 3)
-			throw new IllegalArgumentException("Wrong number of parameters in call to ''InterfaceCreation''");
+			throw new IllegalArgumentException("Wrong number of parameters in call to ''getAllModels''");
 
-		final com.mia.formation.mvc.Model current = __check_arg__(com.mia.formation.mvc.Model.class, _action_parameters[0]);
+		final com.mia.formation.mvc.UIApplication current = __check_arg__(com.mia.formation.mvc.UIApplication.class, _action_parameters[0]);
 		final com.mia.openapi.gen.Context context = __check_arg__(com.mia.openapi.gen.Context.class, _action_parameters[1]);
 		final com.mia.openapi.gen.GenerationServicesManager manager = __check_arg__(com.mia.openapi.gen.GenerationServicesManager.class, _action_parameters[2]);
 
 		return __invoke_user_code__(current, context, manager);
 	}
 
-	public String __invoke_user_code__(final com.mia.formation.mvc.Model current, final com.mia.openapi.gen.Context context, final com.mia.openapi.gen.GenerationServicesManager manager)
+	public Object __invoke_user_code__(final com.mia.formation.mvc.UIApplication current, final com.mia.openapi.gen.Context context, final com.mia.openapi.gen.GenerationServicesManager manager)
 {
 
-java.lang.StringBuffer _template_buffer = new java.lang.StringBuffer();
-_template_buffer.append("package com.mia.banque.model;");
-_template_buffer.append('\n');
-_template_buffer.append('\n');
-_template_buffer.append("import java.util.List;");
-_template_buffer.append('\n');
-_template_buffer.append('\n');
-_template_buffer.append("public interface I");
-_template_buffer.append(manager.action(current, "name"));_template_buffer.append(" {");
-_template_buffer.append('\n');
-_template_buffer.append('\n');
-
-_template_buffer.append(manager.action(current, "PropertyDeclaration"));_template_buffer.append('\n');
-
-_template_buffer.append(manager.action(current, "AttributeCreation"));_template_buffer.append('\n');
-_template_buffer.append('\n');
-_template_buffer.append("}");
-return _template_buffer.toString();
+return manager.allOfClass("Model");
 
 }
 }

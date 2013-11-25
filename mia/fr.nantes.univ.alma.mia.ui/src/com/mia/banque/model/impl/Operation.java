@@ -7,14 +7,31 @@ import com.mia.banque.model.IOperation;
 
 public class Operation implements IOperation {
 
-/**
- * /[PropertyDeclaration]]
- */
+	private String numero;
+	private String montant;
 
 
-/**
- * /[PropertyAccess]]
- */
 
- 
+	@Override
+	public String getNumero() {
+		return this.numero;
+	}
+	
+	@Override
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+
+	@Override
+	public String getMontant() {
+		return this.montant;
+	}
+	
+	@Override
+	public void setMontant(String montant) {
+		this.montant = montant;
+	}
+
+
+
 }

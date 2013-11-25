@@ -65,15 +65,39 @@ public class mvc_Model__Attributes_777915835 implements com.mia.studio.kernel.co
 {
 
 java.lang.StringBuffer _template_buffer = new java.lang.StringBuffer();
+_template_buffer.append("	/**");
+_template_buffer.append('\n');
+_template_buffer.append("	 * Returns the list of ");
+_template_buffer.append(manager.action(current, "name"));_template_buffer.append("s of this model");
+_template_buffer.append('\n');
+_template_buffer.append("	 * @return {@link List}<{@link I");
+_template_buffer.append(manager.action(current, "name"));_template_buffer.append("}> - The ");
+_template_buffer.append(manager.action(current, "name"));_template_buffer.append("s");
+_template_buffer.append('\n');
+_template_buffer.append("	 */ ");
+_template_buffer.append('\n');
 _template_buffer.append("	public List<I");
 _template_buffer.append(manager.action(current, "name"));_template_buffer.append("> get");
 _template_buffer.append(manager.action(current, "name"));_template_buffer.append("s();");
 _template_buffer.append('\n');
-_template_buffer.append("	");
+_template_buffer.append("	/**");
+_template_buffer.append('\n');
+_template_buffer.append("	 * Set the list of ");
+_template_buffer.append(manager.action(current, "name"));_template_buffer.append("s of this model");
+_template_buffer.append('\n');
+_template_buffer.append("	 * @param list");
+_template_buffer.append(manager.action(current, "name"));_template_buffer.append("s {@link List}<{@link I");
+_template_buffer.append(manager.action(current, "name"));_template_buffer.append("}> - The new ");
+_template_buffer.append(manager.action(current, "name"));_template_buffer.append("s");
+_template_buffer.append('\n');
+_template_buffer.append("	 */");
 _template_buffer.append('\n');
 _template_buffer.append("	public void set");
 _template_buffer.append(manager.action(current, "name"));_template_buffer.append("s(List<I");
-_template_buffer.append(manager.action(current, "name"));_template_buffer.append("> newValue);");
+_template_buffer.append(manager.action(current, "name"));_template_buffer.append("> list");
+_template_buffer.append(manager.action(current, "name"));_template_buffer.append("s);");
+_template_buffer.append('\n');
+
 return _template_buffer.toString();
 
 }

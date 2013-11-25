@@ -67,6 +67,8 @@ public class mvc_Model__ModelAttImport_N1673866527 implements com.mia.studio.ker
 java.lang.StringBuffer _template_buffer = new java.lang.StringBuffer();
 _template_buffer.append("import com.mia.banque.model.I");
 _template_buffer.append(manager.action(current, "name"));_template_buffer.append(";");
+_template_buffer.append('\n');
+
 return _template_buffer.toString();
 
 }

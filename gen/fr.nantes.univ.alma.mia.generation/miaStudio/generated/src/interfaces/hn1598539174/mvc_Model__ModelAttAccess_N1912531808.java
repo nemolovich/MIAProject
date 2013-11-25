@@ -65,34 +65,43 @@ public class mvc_Model__ModelAttAccess_N1912531808 implements com.mia.studio.ker
 {
 
 java.lang.StringBuffer _template_buffer = new java.lang.StringBuffer();
+_template_buffer.append('\n');
+_template_buffer.append("	@Override");
+_template_buffer.append('\n');
 _template_buffer.append("	public List<I");
 _template_buffer.append(manager.action(current, "name"));_template_buffer.append("> get");
 _template_buffer.append(manager.action(current, "name"));_template_buffer.append("s() {");
 _template_buffer.append('\n');
 _template_buffer.append("		if (this.list");
-_template_buffer.append(manager.action(current, "name"));_template_buffer.append(" == null) {");
+_template_buffer.append(manager.action(current, "name"));_template_buffer.append("s == null) {");
 _template_buffer.append('\n');
 _template_buffer.append("			this.list");
-_template_buffer.append(manager.action(current, "name"));_template_buffer.append(" = new ArrayList<I");
+_template_buffer.append(manager.action(current, "name"));_template_buffer.append("s = new ArrayList<I");
 _template_buffer.append(manager.action(current, "name"));_template_buffer.append(">();");
 _template_buffer.append('\n');
 _template_buffer.append("		}");
 _template_buffer.append('\n');
 _template_buffer.append("		return this.list");
-_template_buffer.append(manager.action(current, "name"));_template_buffer.append(";");
+_template_buffer.append(manager.action(current, "name"));_template_buffer.append("s;");
 _template_buffer.append('\n');
 _template_buffer.append("	}");
 _template_buffer.append('\n');
 _template_buffer.append("	");
 _template_buffer.append('\n');
+_template_buffer.append("	@Override");
+_template_buffer.append('\n');
 _template_buffer.append("	public void set");
 _template_buffer.append(manager.action(current, "name"));_template_buffer.append("s(List<I");
-_template_buffer.append(manager.action(current, "name"));_template_buffer.append("> newValue) {");
+_template_buffer.append(manager.action(current, "name"));_template_buffer.append("> list");
+_template_buffer.append(manager.action(current, "name"));_template_buffer.append("s) {");
 _template_buffer.append('\n');
 _template_buffer.append("		this.list");
-_template_buffer.append(manager.action(current, "name"));_template_buffer.append(" = newValue;");
+_template_buffer.append(manager.action(current, "name"));_template_buffer.append("s = list");
+_template_buffer.append(manager.action(current, "name"));_template_buffer.append("s;");
 _template_buffer.append('\n');
 _template_buffer.append("	}");
+_template_buffer.append('\n');
+
 return _template_buffer.toString();
 
 }

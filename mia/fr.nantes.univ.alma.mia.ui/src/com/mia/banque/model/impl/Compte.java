@@ -5,25 +5,37 @@ import java.util.ArrayList;
 import com.mia.banque.model.ICompte;
 import com.mia.banque.model.IOperation;
 
+
 public class Compte implements ICompte {
 
-/**
- * /[PropertyDeclaration]]
- */
-	private List<IOperation> listOperation;
+	private String numero;
 
-/**
- * /[PropertyAccess]]
- */
-	public List<IOperation> getOperations() {
-		if (this.listOperation == null) {
-			this.listOperation = new ArrayList<IOperation>();
-		}
-		return this.listOperation;
+	private List<IOperation> listOperations;
+
+
+	@Override
+	public String getNumero() {
+		return this.numero;
 	}
 	
-	public void setOperations(List<IOperation> newValue) {
-		this.listOperation = newValue;
+	@Override
+	public void setNumero(String numero) {
+		this.numero = numero;
 	}
- 
+
+
+	@Override
+	public List<IOperation> getOperations() {
+		if (this.listOperations == null) {
+			this.listOperations = new ArrayList<IOperation>();
+		}
+		return this.listOperations;
+	}
+	
+	@Override
+	public void setOperations(List<IOperation> listOperations) {
+		this.listOperations = listOperations;
+	}
+
+
 }
