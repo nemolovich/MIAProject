@@ -1,0 +1,487 @@
+!SESSION 2013-11-27 12:35:04.337 -----------------------------------------------
+eclipse.buildId=M20130204-1200
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Framework arguments:  -eclipse.password /home/user/.eclipse/master -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -eclipse.password /home/user/.eclipse/master -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.equinox.security 4 0 2013-11-27 12:35:21.384
+!MESSAGE Unable to read password from the file "/home/user/.eclipse/master".
+
+!ENTRY org.eclipse.core.net 1 0 2013-11-27 12:35:28.855
+!MESSAGE System property http.proxyHost is not set but should be cache.etu.univ-nantes.fr.
+
+!ENTRY org.eclipse.core.net 1 0 2013-11-27 12:35:28.855
+!MESSAGE System property http.proxyPort is not set but should be 3128.
+
+!ENTRY org.eclipse.core.net 1 0 2013-11-27 12:35:28.856
+!MESSAGE System property https.proxyHost is not set but should be cache.etu.univ-nantes.fr.
+
+!ENTRY org.eclipse.core.net 1 0 2013-11-27 12:35:28.857
+!MESSAGE System property https.proxyPort is not set but should be 3128.
+
+!ENTRY org.eclipse.core.net 1 0 2013-11-27 12:35:28.871
+!MESSAGE System property https.proxyHost is not set but should be cache.etu.univ-nantes.fr.
+
+!ENTRY org.eclipse.core.net 1 0 2013-11-27 12:35:28.872
+!MESSAGE System property https.proxyPort is not set but should be 3128.
+
+!ENTRY org.eclipse.ecf.provider.filetransfer 4 0 2013-11-27 12:36:01.981
+!MESSAGE org.eclipse.core.runtime.Status[plugin=org.eclipse.ecf.provider.filetransfer;code=4;message=Warning: Platform proxy API not available;severity2;exception=java.lang.NullPointerException;children=[]]
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.net.ProxyManager.tryGetURI(ProxyManager.java:322)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:299)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:364)
+	at org.eclipse.core.internal.net.ProxyManager.select(ProxyManager.java:441)
+	at org.eclipse.ecf.provider.filetransfer.util.ProxySetupHelper.getProxy(ProxySetupHelper.java:40)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.setupProxies(AbstractRetrieveFileTransfer.java:946)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:878)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:570)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.MultiProtocolRetrieveAdapter.sendRetrieveRequest(MultiProtocolRetrieveAdapter.java:106)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.sendRetrieveRequest(FileReader.java:422)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.readInto(FileReader.java:355)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:101)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:156)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadIndexFile(AbstractRepositoryManager.java:721)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:640)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:150)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:128)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:72)
+
+!ENTRY org.eclipse.ecf.provider.filetransfer 4 0 2013-11-27 12:36:01.991
+!MESSAGE org.eclipse.core.runtime.Status[plugin=org.eclipse.ecf.provider.filetransfer;code=4;message=Warning: Platform proxy API not available;severity2;exception=java.lang.NullPointerException;children=[]]
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.net.ProxyManager.tryGetURI(ProxyManager.java:322)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:299)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:364)
+	at org.eclipse.core.internal.net.ProxyManager.select(ProxyManager.java:441)
+	at org.eclipse.ecf.provider.filetransfer.util.ProxySetupHelper.getProxy(ProxySetupHelper.java:40)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser.setupProxies(AbstractFileSystemBrowser.java:226)
+	at org.eclipse.ecf.provider.filetransfer.browse.URLFileSystemBrowser.runRequest(URLFileSystemBrowser.java:91)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.ecf.provider.filetransfer 4 0 2013-11-27 12:36:01.998
+!MESSAGE org.eclipse.core.runtime.Status[plugin=org.eclipse.ecf.provider.filetransfer;code=4;message=Warning: Platform proxy API not available;severity2;exception=java.lang.NullPointerException;children=[]]
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.net.ProxyManager.tryGetURI(ProxyManager.java:322)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:299)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:364)
+	at org.eclipse.core.internal.net.ProxyManager.select(ProxyManager.java:441)
+	at org.eclipse.ecf.provider.filetransfer.util.ProxySetupHelper.getProxy(ProxySetupHelper.java:40)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser.setupProxies(AbstractFileSystemBrowser.java:226)
+	at org.eclipse.ecf.provider.filetransfer.browse.URLFileSystemBrowser.runRequest(URLFileSystemBrowser.java:91)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.ecf.provider.filetransfer 4 0 2013-11-27 12:36:02.009
+!MESSAGE org.eclipse.core.runtime.Status[plugin=org.eclipse.ecf.provider.filetransfer;code=4;message=Warning: Platform proxy API not available;severity2;exception=java.lang.NullPointerException;children=[]]
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.net.ProxyManager.tryGetURI(ProxyManager.java:322)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:299)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:364)
+	at org.eclipse.core.internal.net.ProxyManager.select(ProxyManager.java:441)
+	at org.eclipse.ecf.provider.filetransfer.util.ProxySetupHelper.getProxy(ProxySetupHelper.java:40)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser.setupProxies(AbstractFileSystemBrowser.java:226)
+	at org.eclipse.ecf.provider.filetransfer.browse.URLFileSystemBrowser.runRequest(URLFileSystemBrowser.java:91)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.ecf.provider.filetransfer 4 0 2013-11-27 12:36:02.010
+!MESSAGE org.eclipse.core.runtime.Status[plugin=org.eclipse.ecf.provider.filetransfer;code=4;message=Warning: Platform proxy API not available;severity2;exception=java.lang.NullPointerException;children=[]]
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.net.ProxyManager.tryGetURI(ProxyManager.java:322)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:299)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:364)
+	at org.eclipse.core.internal.net.ProxyManager.select(ProxyManager.java:441)
+	at org.eclipse.ecf.provider.filetransfer.util.ProxySetupHelper.getProxy(ProxySetupHelper.java:40)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser.setupProxies(AbstractFileSystemBrowser.java:226)
+	at org.eclipse.ecf.provider.filetransfer.browse.URLFileSystemBrowser.runRequest(URLFileSystemBrowser.java:91)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.ecf.provider.filetransfer 4 0 2013-11-27 12:36:02.027
+!MESSAGE org.eclipse.core.runtime.Status[plugin=org.eclipse.ecf.provider.filetransfer;code=4;message=Warning: Platform proxy API not available;severity2;exception=java.lang.NullPointerException;children=[]]
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.net.ProxyManager.tryGetURI(ProxyManager.java:322)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:299)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:364)
+	at org.eclipse.core.internal.net.ProxyManager.select(ProxyManager.java:441)
+	at org.eclipse.ecf.provider.filetransfer.util.ProxySetupHelper.getProxy(ProxySetupHelper.java:40)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.setupProxies(AbstractRetrieveFileTransfer.java:946)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:878)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:570)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.MultiProtocolRetrieveAdapter.sendRetrieveRequest(MultiProtocolRetrieveAdapter.java:106)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.sendRetrieveRequest(FileReader.java:422)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.readInto(FileReader.java:355)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:101)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:156)
+	at org.eclipse.equinox.internal.p2.updatesite.UpdateSite.loadActualSiteFile(UpdateSite.java:202)
+	at org.eclipse.equinox.internal.p2.updatesite.UpdateSite.load(UpdateSite.java:144)
+	at org.eclipse.equinox.internal.p2.updatesite.metadata.UpdateSiteMetadataRepositoryFactory.initializeRepository(UpdateSiteMetadataRepositoryFactory.java:99)
+	at org.eclipse.equinox.internal.p2.updatesite.metadata.UpdateSiteMetadataRepositoryFactory.load(UpdateSiteMetadataRepositoryFactory.java:59)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:758)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:651)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:150)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:128)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:72)
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2013-11-27 12:36:02.051
+!MESSAGE No repository found at jar:file:/home/nemo/Documents/Mia/com.mia.studio.updatesite.mia9beta-2013-11-06/features/com.mia.studio.samples.feature_9.0.0.201311061305.jar!/.
+
+!ENTRY org.eclipse.ecf.provider.filetransfer 4 0 2013-11-27 12:36:24.628
+!MESSAGE org.eclipse.core.runtime.Status[plugin=org.eclipse.ecf.provider.filetransfer;code=4;message=Warning: Platform proxy API not available;severity2;exception=java.lang.NullPointerException;children=[]]
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.net.ProxyManager.tryGetURI(ProxyManager.java:322)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:299)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:364)
+	at org.eclipse.core.internal.net.ProxyManager.select(ProxyManager.java:441)
+	at org.eclipse.ecf.provider.filetransfer.util.ProxySetupHelper.getProxy(ProxySetupHelper.java:40)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.setupProxies(AbstractRetrieveFileTransfer.java:946)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:878)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:570)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.MultiProtocolRetrieveAdapter.sendRetrieveRequest(MultiProtocolRetrieveAdapter.java:106)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.sendRetrieveRequest(FileReader.java:422)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.readInto(FileReader.java:355)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:101)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:156)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadIndexFile(AbstractRepositoryManager.java:721)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:640)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:150)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:128)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:72)
+
+!ENTRY org.eclipse.ecf.provider.filetransfer 4 0 2013-11-27 12:36:24.630
+!MESSAGE org.eclipse.core.runtime.Status[plugin=org.eclipse.ecf.provider.filetransfer;code=4;message=Warning: Platform proxy API not available;severity2;exception=java.lang.NullPointerException;children=[]]
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.net.ProxyManager.tryGetURI(ProxyManager.java:322)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:299)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:364)
+	at org.eclipse.core.internal.net.ProxyManager.select(ProxyManager.java:441)
+	at org.eclipse.ecf.provider.filetransfer.util.ProxySetupHelper.getProxy(ProxySetupHelper.java:40)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser.setupProxies(AbstractFileSystemBrowser.java:226)
+	at org.eclipse.ecf.provider.filetransfer.browse.URLFileSystemBrowser.runRequest(URLFileSystemBrowser.java:91)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.ecf.provider.filetransfer 4 0 2013-11-27 12:36:24.632
+!MESSAGE org.eclipse.core.runtime.Status[plugin=org.eclipse.ecf.provider.filetransfer;code=4;message=Warning: Platform proxy API not available;severity2;exception=java.lang.NullPointerException;children=[]]
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.net.ProxyManager.tryGetURI(ProxyManager.java:322)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:299)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:364)
+	at org.eclipse.core.internal.net.ProxyManager.select(ProxyManager.java:441)
+	at org.eclipse.ecf.provider.filetransfer.util.ProxySetupHelper.getProxy(ProxySetupHelper.java:40)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser.setupProxies(AbstractFileSystemBrowser.java:226)
+	at org.eclipse.ecf.provider.filetransfer.browse.URLFileSystemBrowser.runRequest(URLFileSystemBrowser.java:91)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.ecf.provider.filetransfer 4 0 2013-11-27 12:36:24.634
+!MESSAGE org.eclipse.core.runtime.Status[plugin=org.eclipse.ecf.provider.filetransfer;code=4;message=Warning: Platform proxy API not available;severity2;exception=java.lang.NullPointerException;children=[]]
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.net.ProxyManager.tryGetURI(ProxyManager.java:322)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:299)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:364)
+	at org.eclipse.core.internal.net.ProxyManager.select(ProxyManager.java:441)
+	at org.eclipse.ecf.provider.filetransfer.util.ProxySetupHelper.getProxy(ProxySetupHelper.java:40)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser.setupProxies(AbstractFileSystemBrowser.java:226)
+	at org.eclipse.ecf.provider.filetransfer.browse.URLFileSystemBrowser.runRequest(URLFileSystemBrowser.java:91)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.ecf.provider.filetransfer 4 0 2013-11-27 12:36:24.635
+!MESSAGE org.eclipse.core.runtime.Status[plugin=org.eclipse.ecf.provider.filetransfer;code=4;message=Warning: Platform proxy API not available;severity2;exception=java.lang.NullPointerException;children=[]]
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.net.ProxyManager.tryGetURI(ProxyManager.java:322)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:299)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:364)
+	at org.eclipse.core.internal.net.ProxyManager.select(ProxyManager.java:441)
+	at org.eclipse.ecf.provider.filetransfer.util.ProxySetupHelper.getProxy(ProxySetupHelper.java:40)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser.setupProxies(AbstractFileSystemBrowser.java:226)
+	at org.eclipse.ecf.provider.filetransfer.browse.URLFileSystemBrowser.runRequest(URLFileSystemBrowser.java:91)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.ecf.provider.filetransfer 4 0 2013-11-27 12:36:24.639
+!MESSAGE org.eclipse.core.runtime.Status[plugin=org.eclipse.ecf.provider.filetransfer;code=4;message=Warning: Platform proxy API not available;severity2;exception=java.lang.NullPointerException;children=[]]
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.net.ProxyManager.tryGetURI(ProxyManager.java:322)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:299)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:364)
+	at org.eclipse.core.internal.net.ProxyManager.select(ProxyManager.java:441)
+	at org.eclipse.ecf.provider.filetransfer.util.ProxySetupHelper.getProxy(ProxySetupHelper.java:40)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.setupProxies(AbstractRetrieveFileTransfer.java:946)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:878)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:570)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.MultiProtocolRetrieveAdapter.sendRetrieveRequest(MultiProtocolRetrieveAdapter.java:106)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.sendRetrieveRequest(FileReader.java:422)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.readInto(FileReader.java:355)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:101)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:156)
+	at org.eclipse.equinox.internal.p2.updatesite.UpdateSite.loadActualSiteFile(UpdateSite.java:202)
+	at org.eclipse.equinox.internal.p2.updatesite.UpdateSite.load(UpdateSite.java:144)
+	at org.eclipse.equinox.internal.p2.updatesite.metadata.UpdateSiteMetadataRepositoryFactory.initializeRepository(UpdateSiteMetadataRepositoryFactory.java:99)
+	at org.eclipse.equinox.internal.p2.updatesite.metadata.UpdateSiteMetadataRepositoryFactory.load(UpdateSiteMetadataRepositoryFactory.java:59)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:758)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:651)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:150)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:128)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:72)
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2013-11-27 12:36:24.641
+!MESSAGE No repository found at jar:file:/home/nemo/Documents/Mia/com.mia.studio.updatesite.mia9beta-2013-11-06/features/com.mia.studio.model.feature_9.0.0.201311061305.jar!/.
+
+!ENTRY org.eclipse.ecf.provider.filetransfer 4 0 2013-11-27 12:36:25.366
+!MESSAGE org.eclipse.core.runtime.Status[plugin=org.eclipse.ecf.provider.filetransfer;code=4;message=Warning: Platform proxy API not available;severity2;exception=java.lang.NullPointerException;children=[]]
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.net.ProxyManager.tryGetURI(ProxyManager.java:322)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:299)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:364)
+	at org.eclipse.core.internal.net.ProxyManager.select(ProxyManager.java:441)
+	at org.eclipse.ecf.provider.filetransfer.util.ProxySetupHelper.getProxy(ProxySetupHelper.java:40)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.setupProxies(AbstractRetrieveFileTransfer.java:946)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:878)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:570)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.MultiProtocolRetrieveAdapter.sendRetrieveRequest(MultiProtocolRetrieveAdapter.java:106)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.sendRetrieveRequest(FileReader.java:422)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.readInto(FileReader.java:355)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:101)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:156)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadIndexFile(AbstractRepositoryManager.java:721)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:640)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:150)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:128)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:72)
+
+!ENTRY org.eclipse.ecf.provider.filetransfer 4 0 2013-11-27 12:36:25.367
+!MESSAGE org.eclipse.core.runtime.Status[plugin=org.eclipse.ecf.provider.filetransfer;code=4;message=Warning: Platform proxy API not available;severity2;exception=java.lang.NullPointerException;children=[]]
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.net.ProxyManager.tryGetURI(ProxyManager.java:322)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:299)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:364)
+	at org.eclipse.core.internal.net.ProxyManager.select(ProxyManager.java:441)
+	at org.eclipse.ecf.provider.filetransfer.util.ProxySetupHelper.getProxy(ProxySetupHelper.java:40)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser.setupProxies(AbstractFileSystemBrowser.java:226)
+	at org.eclipse.ecf.provider.filetransfer.browse.URLFileSystemBrowser.runRequest(URLFileSystemBrowser.java:91)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.ecf.provider.filetransfer 4 0 2013-11-27 12:36:25.372
+!MESSAGE org.eclipse.core.runtime.Status[plugin=org.eclipse.ecf.provider.filetransfer;code=4;message=Warning: Platform proxy API not available;severity2;exception=java.lang.NullPointerException;children=[]]
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.net.ProxyManager.tryGetURI(ProxyManager.java:322)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:299)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:364)
+	at org.eclipse.core.internal.net.ProxyManager.select(ProxyManager.java:441)
+	at org.eclipse.ecf.provider.filetransfer.util.ProxySetupHelper.getProxy(ProxySetupHelper.java:40)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser.setupProxies(AbstractFileSystemBrowser.java:226)
+	at org.eclipse.ecf.provider.filetransfer.browse.URLFileSystemBrowser.runRequest(URLFileSystemBrowser.java:91)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.ecf.provider.filetransfer 4 0 2013-11-27 12:36:25.379
+!MESSAGE org.eclipse.core.runtime.Status[plugin=org.eclipse.ecf.provider.filetransfer;code=4;message=Warning: Platform proxy API not available;severity2;exception=java.lang.NullPointerException;children=[]]
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.net.ProxyManager.tryGetURI(ProxyManager.java:322)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:299)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:364)
+	at org.eclipse.core.internal.net.ProxyManager.select(ProxyManager.java:441)
+	at org.eclipse.ecf.provider.filetransfer.util.ProxySetupHelper.getProxy(ProxySetupHelper.java:40)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser.setupProxies(AbstractFileSystemBrowser.java:226)
+	at org.eclipse.ecf.provider.filetransfer.browse.URLFileSystemBrowser.runRequest(URLFileSystemBrowser.java:91)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.ecf.provider.filetransfer 4 0 2013-11-27 12:36:25.380
+!MESSAGE org.eclipse.core.runtime.Status[plugin=org.eclipse.ecf.provider.filetransfer;code=4;message=Warning: Platform proxy API not available;severity2;exception=java.lang.NullPointerException;children=[]]
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.net.ProxyManager.tryGetURI(ProxyManager.java:322)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:299)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:364)
+	at org.eclipse.core.internal.net.ProxyManager.select(ProxyManager.java:441)
+	at org.eclipse.ecf.provider.filetransfer.util.ProxySetupHelper.getProxy(ProxySetupHelper.java:40)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser.setupProxies(AbstractFileSystemBrowser.java:226)
+	at org.eclipse.ecf.provider.filetransfer.browse.URLFileSystemBrowser.runRequest(URLFileSystemBrowser.java:91)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.ecf.provider.filetransfer 4 0 2013-11-27 12:36:25.384
+!MESSAGE org.eclipse.core.runtime.Status[plugin=org.eclipse.ecf.provider.filetransfer;code=4;message=Warning: Platform proxy API not available;severity2;exception=java.lang.NullPointerException;children=[]]
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.net.ProxyManager.tryGetURI(ProxyManager.java:322)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:299)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:364)
+	at org.eclipse.core.internal.net.ProxyManager.select(ProxyManager.java:441)
+	at org.eclipse.ecf.provider.filetransfer.util.ProxySetupHelper.getProxy(ProxySetupHelper.java:40)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.setupProxies(AbstractRetrieveFileTransfer.java:946)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:878)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:570)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.MultiProtocolRetrieveAdapter.sendRetrieveRequest(MultiProtocolRetrieveAdapter.java:106)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.sendRetrieveRequest(FileReader.java:422)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.readInto(FileReader.java:355)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:101)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:156)
+	at org.eclipse.equinox.internal.p2.updatesite.UpdateSite.loadActualSiteFile(UpdateSite.java:202)
+	at org.eclipse.equinox.internal.p2.updatesite.UpdateSite.load(UpdateSite.java:144)
+	at org.eclipse.equinox.internal.p2.updatesite.metadata.UpdateSiteMetadataRepositoryFactory.initializeRepository(UpdateSiteMetadataRepositoryFactory.java:99)
+	at org.eclipse.equinox.internal.p2.updatesite.metadata.UpdateSiteMetadataRepositoryFactory.load(UpdateSiteMetadataRepositoryFactory.java:59)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:758)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:651)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:150)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:128)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:72)
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2013-11-27 12:36:25.386
+!MESSAGE No repository found at jar:file:/home/nemo/Documents/Mia/com.mia.studio.updatesite.mia9beta-2013-11-06/features/com.mia.studio.feature_9.0.0.201311061305.jar!/.
+
+!ENTRY org.eclipse.ecf.provider.filetransfer 4 0 2013-11-27 12:36:25.386
+!MESSAGE org.eclipse.core.runtime.Status[plugin=org.eclipse.ecf.provider.filetransfer;code=4;message=Warning: Platform proxy API not available;severity2;exception=java.lang.NullPointerException;children=[]]
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.net.ProxyManager.tryGetURI(ProxyManager.java:322)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:299)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:364)
+	at org.eclipse.core.internal.net.ProxyManager.select(ProxyManager.java:441)
+	at org.eclipse.ecf.provider.filetransfer.util.ProxySetupHelper.getProxy(ProxySetupHelper.java:40)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.setupProxies(AbstractRetrieveFileTransfer.java:946)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:878)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:570)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.MultiProtocolRetrieveAdapter.sendRetrieveRequest(MultiProtocolRetrieveAdapter.java:106)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.sendRetrieveRequest(FileReader.java:422)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.readInto(FileReader.java:355)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:101)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:156)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadIndexFile(AbstractRepositoryManager.java:721)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:640)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:150)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:128)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:72)
+
+!ENTRY org.eclipse.ecf.provider.filetransfer 4 0 2013-11-27 12:36:25.388
+!MESSAGE org.eclipse.core.runtime.Status[plugin=org.eclipse.ecf.provider.filetransfer;code=4;message=Warning: Platform proxy API not available;severity2;exception=java.lang.NullPointerException;children=[]]
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.net.ProxyManager.tryGetURI(ProxyManager.java:322)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:299)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:364)
+	at org.eclipse.core.internal.net.ProxyManager.select(ProxyManager.java:441)
+	at org.eclipse.ecf.provider.filetransfer.util.ProxySetupHelper.getProxy(ProxySetupHelper.java:40)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser.setupProxies(AbstractFileSystemBrowser.java:226)
+	at org.eclipse.ecf.provider.filetransfer.browse.URLFileSystemBrowser.runRequest(URLFileSystemBrowser.java:91)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.ecf.provider.filetransfer 4 0 2013-11-27 12:36:25.390
+!MESSAGE org.eclipse.core.runtime.Status[plugin=org.eclipse.ecf.provider.filetransfer;code=4;message=Warning: Platform proxy API not available;severity2;exception=java.lang.NullPointerException;children=[]]
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.net.ProxyManager.tryGetURI(ProxyManager.java:322)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:299)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:364)
+	at org.eclipse.core.internal.net.ProxyManager.select(ProxyManager.java:441)
+	at org.eclipse.ecf.provider.filetransfer.util.ProxySetupHelper.getProxy(ProxySetupHelper.java:40)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser.setupProxies(AbstractFileSystemBrowser.java:226)
+	at org.eclipse.ecf.provider.filetransfer.browse.URLFileSystemBrowser.runRequest(URLFileSystemBrowser.java:91)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.ecf.provider.filetransfer 4 0 2013-11-27 12:36:25.392
+!MESSAGE org.eclipse.core.runtime.Status[plugin=org.eclipse.ecf.provider.filetransfer;code=4;message=Warning: Platform proxy API not available;severity2;exception=java.lang.NullPointerException;children=[]]
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.net.ProxyManager.tryGetURI(ProxyManager.java:322)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:299)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:364)
+	at org.eclipse.core.internal.net.ProxyManager.select(ProxyManager.java:441)
+	at org.eclipse.ecf.provider.filetransfer.util.ProxySetupHelper.getProxy(ProxySetupHelper.java:40)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser.setupProxies(AbstractFileSystemBrowser.java:226)
+	at org.eclipse.ecf.provider.filetransfer.browse.URLFileSystemBrowser.runRequest(URLFileSystemBrowser.java:91)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.ecf.provider.filetransfer 4 0 2013-11-27 12:36:25.393
+!MESSAGE org.eclipse.core.runtime.Status[plugin=org.eclipse.ecf.provider.filetransfer;code=4;message=Warning: Platform proxy API not available;severity2;exception=java.lang.NullPointerException;children=[]]
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.net.ProxyManager.tryGetURI(ProxyManager.java:322)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:299)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:364)
+	at org.eclipse.core.internal.net.ProxyManager.select(ProxyManager.java:441)
+	at org.eclipse.ecf.provider.filetransfer.util.ProxySetupHelper.getProxy(ProxySetupHelper.java:40)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser.setupProxies(AbstractFileSystemBrowser.java:226)
+	at org.eclipse.ecf.provider.filetransfer.browse.URLFileSystemBrowser.runRequest(URLFileSystemBrowser.java:91)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.ecf.provider.filetransfer 4 0 2013-11-27 12:36:25.396
+!MESSAGE org.eclipse.core.runtime.Status[plugin=org.eclipse.ecf.provider.filetransfer;code=4;message=Warning: Platform proxy API not available;severity2;exception=java.lang.NullPointerException;children=[]]
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.net.ProxyManager.tryGetURI(ProxyManager.java:322)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:299)
+	at org.eclipse.core.internal.net.ProxyManager.getProxyDataForHost(ProxyManager.java:364)
+	at org.eclipse.core.internal.net.ProxyManager.select(ProxyManager.java:441)
+	at org.eclipse.ecf.provider.filetransfer.util.ProxySetupHelper.getProxy(ProxySetupHelper.java:40)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.setupProxies(AbstractRetrieveFileTransfer.java:946)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:878)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:570)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.MultiProtocolRetrieveAdapter.sendRetrieveRequest(MultiProtocolRetrieveAdapter.java:106)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.sendRetrieveRequest(FileReader.java:422)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.readInto(FileReader.java:355)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:101)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:156)
+	at org.eclipse.equinox.internal.p2.updatesite.UpdateSite.loadActualSiteFile(UpdateSite.java:202)
+	at org.eclipse.equinox.internal.p2.updatesite.UpdateSite.load(UpdateSite.java:144)
+	at org.eclipse.equinox.internal.p2.updatesite.metadata.UpdateSiteMetadataRepositoryFactory.initializeRepository(UpdateSiteMetadataRepositoryFactory.java:99)
+	at org.eclipse.equinox.internal.p2.updatesite.metadata.UpdateSiteMetadataRepositoryFactory.load(UpdateSiteMetadataRepositoryFactory.java:59)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:758)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:651)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:150)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:128)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:72)
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2013-11-27 12:36:25.398
+!MESSAGE No repository found at jar:file:/home/nemo/Bureau/wso2-developer-studio-3.2.0.zip!/.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2013-11-27 12:36:25.406
+!MESSAGE No repository found at file:/home/nemo/Documents/Mia/com.mia.studio.updatesite.mia9beta-2013-11-06/.
