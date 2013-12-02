@@ -4,5 +4,5 @@ public interface IBanqueView {
 	
 	public void afficherClient();
 	public void quitter();
-	
+
 }

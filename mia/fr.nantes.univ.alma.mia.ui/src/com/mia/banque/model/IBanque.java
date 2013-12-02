@@ -2,6 +2,7 @@ package com.mia.banque.model;
 
 import java.util.List;
 
+
 public interface IBanque {
 
 
@@ -15,6 +16,5 @@ public interface IBanque {
 	 * @param listClients {@link List}<{@link IClient}> - The new Clients
 	 */
 	public void setClients(List<IClient> listClients);
-
 
 }

@@ -2,6 +2,7 @@ package com.mia.banque.model;
 
 import java.util.List;
 
+
 public interface IClient {
 
 	/**
@@ -45,6 +46,5 @@ public interface IClient {
 	 * @param listComptes {@link List}<{@link ICompte}> - The new Comptes
 	 */
 	public void setComptes(List<ICompte> listComptes);
-
 
 }

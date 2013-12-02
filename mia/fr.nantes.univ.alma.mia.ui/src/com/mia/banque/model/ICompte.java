@@ -2,6 +2,7 @@ package com.mia.banque.model;
 
 import java.util.List;
 
+
 public interface ICompte {
 
 	/**
@@ -25,6 +26,5 @@ public interface ICompte {
 	 * @param listOperations {@link List}<{@link IOperation}> - The new Operations
 	 */
 	public void setOperations(List<IOperation> listOperations);
-
 
 }

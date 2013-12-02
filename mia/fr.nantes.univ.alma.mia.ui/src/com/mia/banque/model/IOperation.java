@@ -1,6 +1,6 @@
 package com.mia.banque.model;
 
-import java.util.List;
+
 
 public interface IOperation {
 
@@ -24,7 +24,6 @@ public interface IOperation {
 	 * @param montant {@link String} - The new Montant value
 	 */
 	public void setMontant(String montant);
-
 
 
 }
