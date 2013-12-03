@@ -28,4 +28,9 @@ public class Banque implements IBanque {
 	}
 
 
+	@Override
+	public String toString() {
+		return "["+ "]";
+	}
+
 }

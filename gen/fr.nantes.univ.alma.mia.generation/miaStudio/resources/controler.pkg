@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE PACKAGE SYSTEM "package.dtd">
+<PACKAGE NAME="controler" METAMODEL="MVC" NUMBER="19"
+ DOCUMENTATION="">
+	<fileHeader version="5" toolName="Mia-Generation" toolVersion="9.0.0"/>
+	<SCENARIO NAME="ControlerCreation" VISIBILITY="public" META_OBJECT="View" CATEGORY="default" DOCUMENTATION="">
+		<SERVICE_CALL NAME="current" PACKAGE="System" META_OBJECT="View"/>
+		<GENERATION_STEP TYPE="FileTemplate" PACKAGE="controler" META_OBJECT="View" CATEGORY="interfaces" NAME="CreateControlerInterface" PARAM_COUNT="0"/>
+		<GENERATION_STEP TYPE="FileTemplate" PACKAGE="controler" META_OBJECT="View" CATEGORY="implementation" NAME="ControlerImplementation" PARAM_COUNT="0"/>
+	</SCENARIO>
+	<SCRIPT NAME="ControlerActionMethodHeader" META_OBJECT="Action" CATEGORY="implementation">
+		<TEXT><![CDATA[
+
+	public void [[name]]() {
+[[ControlerActionMethodImplementation]][[QuitterActionImplementation]]
+	}
+
+]]></TEXT>
+	</SCRIPT>
+	<SCRIPT NAME="ControlerActionMethodImplementation" META_OBJECT="Action" CATEGORY="implementation">
+		<TEXT><![CDATA[
+[[BeginTag]]
+		if (this.view.[[lowerModelName]]sList.getSelection().length >0) {
+			String [[lowerModelName]]Selection = this.view.[[lowerModelName]]sList.getSelection()[0];
+			for (final I[[NextPageModelName]] a[[NextPageModelName]] : this.model.get[[NextPageModelName]]s()) {
+				if (a[[NextPageModelName]].toString().equals([[lowerModelName]]Selection)) { // TODO gerer un champ id plutot que utiliser toString()
+					[[NextPageModelName]]Controler [[lowerModelName]]Controler = new [[NextPageModelName]]Controler(a[[NextPageModelName]]);
+					[[lowerModelName]]Controler.initView();
+				}
+			}
+		}
+[[EndTag]]
+]]></TEXT>
+		<PROPERTY NAME="BeginTag"/>
+		<PROPERTY NAME="EndTag"/>
+		<PROPERTY NAME="Precondition"/>
+	</SCRIPT>
+	<SCRIPT NAME="ControlerActionMethodImplementation$BeginTag" META_OBJECT="Action" CATEGORY="implementation">
+		<TEXT><![CDATA[
+		// Start of user code for [[name]]
+]]></TEXT>
+	</SCRIPT>
+	<SCRIPT NAME="ControlerActionMethodImplementation$EndTag" META_OBJECT="Action" CATEGORY="implementation">
+		<TEXT><![CDATA[
+		// End of user code for [[name]]
+]]></TEXT>
+	</SCRIPT>
+	<MACRO_CONDITION NAME="ControlerActionMethodImplementation$Precondition" META_OBJECT="Action" CATEGORY="implementation">
+		<TEXT><![CDATA[
+return current.getNextPage()!=null;
+]]></TEXT>
+	</MACRO_CONDITION>
+	<SCRIPT NAME="NextPageModelImport" META_OBJECT="Action" CATEGORY="implementation">
+		<TEXT><![CDATA[
+import com.mia.banque.model.I[[NextPageModelName]];
+
+]]></TEXT>
+		<PROPERTY NAME="Precondition"/>
+	</SCRIPT>
+	<MACRO_CONDITION NAME="NextPageModelImport$Precondition" META_OBJECT="Action" CATEGORY="implementation">
+		<TEXT><![CDATA[
+return current.getNextPage()!=null;
+]]></TEXT>
+	</MACRO_CONDITION>
+	<TEXT_MACRO NAME="NextPageModelName" META_OBJECT="Action" CATEGORY="default" RETURN_TYPE_KIND="primitive" RETURN_TYPE_NAME="String">
+		<TEXT><![CDATA[
+return current.getNextPage().getModel().getName();
+]]></TEXT>
+	</TEXT_MACRO>
+	<SCRIPT NAME="QuitterActionImplementation" META_OBJECT="Action" CATEGORY="implementation">
+		<TEXT><![CDATA[
+[[BeginTag]]
+		//On veut fermer toutes les fenetres ouvertes
+		Display.getCurrent().dispose();
+[[EndTag]]
+]]></TEXT>
+		<PROPERTY NAME="BeginTag"/>
+		<PROPERTY NAME="EndTag"/>
+		<PROPERTY NAME="Precondition"/>
+	</SCRIPT>
+	<SCRIPT NAME="QuitterActionImplementation$BeginTag" META_OBJECT="Action" CATEGORY="implementation">
+		<TEXT><![CDATA[
+		// Start of user code for [[name]]
+]]></TEXT>
+	</SCRIPT>
+	<SCRIPT NAME="QuitterActionImplementation$EndTag" META_OBJECT="Action" CATEGORY="implementation" SINGLE_EVAL="true">
+		<TEXT><![CDATA[
+		// End of user code for [[name]]
+]]></TEXT>
+	</SCRIPT>
+	<MACRO_CONDITION NAME="QuitterActionImplementation$Precondition" META_OBJECT="Action" CATEGORY="implementation">
+		<TEXT><![CDATA[
+return current.getName().equalsIgnoreCase("quitter");
+]]></TEXT>
+	</MACRO_CONDITION>
+	<TEXT_MACRO NAME="lowerModelName" META_OBJECT="Action" CATEGORY="default" RETURN_TYPE_KIND="primitive" RETURN_TYPE_NAME="String">
+		<TEXT><![CDATA[
+return current.getNextPage().getModel().getName().toLowerCase();
+]]></TEXT>
+	</TEXT_MACRO>
+	<TEXT_MACRO NAME="ActionImplementation" META_OBJECT="View" CATEGORY="implementation" RETURN_TYPE_KIND="primitive" RETURN_TYPE_NAME="String">
+		<TEXT><![CDATA[
+return manager.apply(current.getActions(), "ControlerActionMethodHeader");
+]]></TEXT>
+	</TEXT_MACRO>
+	<TEXT_MACRO NAME="ActionNextPageModelImport" META_OBJECT="View" CATEGORY="implementation" RETURN_TYPE_KIND="primitive" RETURN_TYPE_NAME="String">
+		<TEXT><![CDATA[
+return manager.apply(current.getActions(), "NextPageModelImport");
+]]></TEXT>
+	</TEXT_MACRO>
+	<SCRIPT NAME="ControlerImplementation" META_OBJECT="View" CATEGORY="implementation" FILE_ENCODING="UTF-8" VISIBILITY="private">
+		<TEXT><![CDATA[
+package com.mia.banque.ui.controler.swt;
+
+import org.eclipse.swt.widgets.Display;
+
+import com.mia.banque.ui.controler.I[[ModelName]]Controler;
+import com.mia.banque.ui.view.swt.[[name]];
+import com.mia.banque.model.I[[ModelName]];
+[[ActionNextPageModelImport]];
+
+public class [[ModelName]]Controler implements I[[ModelName]]Controler {
+
+	private [[name]] view;
+	private I[[ModelName]] model;
+
+	public [[ModelName]]Controler(I[[ModelName]] model) {
+		this.model = model;
+	}
+	
+	@Override
+	public void initView() {
+		Display display = Display.getDefault();
+		
+		this.view = new [[name]](display, this.model, this);
+		this.view.open();
+		this.view.layout();
+		
+		while (!this.view.isDisposed()) {
+			if (!display.readAndDispatch()) {
+				display.sleep();
+			}
+		}
+
+	}
+
+[[ActionImplementation]]
+
+}
+]]></TEXT>
+		<PROPERTY NAME="Filename"/>
+	</SCRIPT>
+	<SCRIPT NAME="ControlerImplementation$Filename" META_OBJECT="View" CATEGORY="implementation">
+		<TEXT><![CDATA[
+com/mia/banque/ui/controler/swt/[[ModelName]]Controler.java
+]]></TEXT>
+	</SCRIPT>
+	<SCRIPT NAME="CreateControlerInterface" META_OBJECT="View" CATEGORY="interfaces" FILE_ENCODING="UTF-8" VISIBILITY="private">
+		<TEXT><![CDATA[
+package com.mia.banque.ui.controler;
+
+public interface I[[ModelName]]Controler {
+	
+	public void initView();
+
+[[ActionDeclaration]]
+}
+]]></TEXT>
+		<PROPERTY NAME="Filename"/>
+	</SCRIPT>
+	<SCRIPT NAME="CreateControlerInterface$Filename" META_OBJECT="View" CATEGORY="interfaces">
+		<TEXT><![CDATA[
+com/mia/banque/ui/controler/I[[ModelName]]Controler.java
+]]></TEXT>
+	</SCRIPT>
+</PACKAGE>

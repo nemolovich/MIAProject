@@ -35,7 +35,7 @@ public class BanqueControler implements IBanqueControler {
 
 
 	public void afficherClient() {
-
+		// Start of user code for afficherClient
 		if (this.view.clientsList.getSelection().length >0) {
 			String clientSelection = this.view.clientsList.getSelection()[0];
 			for (final IClient aClient : this.model.getClients()) {
@@ -45,15 +45,14 @@ public class BanqueControler implements IBanqueControler {
 				}
 			}
 		}
-
-
+		// End of user code for afficherClient
 	}
 
 	public void quitter() {
-
+		// Start of user code for quitter
 		//On veut fermer toutes les fenetres ouvertes
 		Display.getCurrent().dispose();
-
+		// End of user code for quitter
 	}
 
 

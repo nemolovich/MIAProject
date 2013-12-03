@@ -35,7 +35,7 @@ public class ClientControler implements IClientControler {
 
 
 	public void afficherCompte() {
-
+		// Start of user code for afficherCompte
 		if (this.view.comptesList.getSelection().length >0) {
 			String compteSelection = this.view.comptesList.getSelection()[0];
 			for (final ICompte aCompte : this.model.getComptes()) {
@@ -45,15 +45,14 @@ public class ClientControler implements IClientControler {
 				}
 			}
 		}
-
-
+		// End of user code for afficherCompte
 	}
 
 	public void quitter() {
-
+		// Start of user code for quitter
 		//On veut fermer toutes les fenetres ouvertes
 		Display.getCurrent().dispose();
-
+		// End of user code for quitter
 	}
 
 

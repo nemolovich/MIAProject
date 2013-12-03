@@ -34,10 +34,10 @@ public class OperationControler implements IOperationControler {
 
 
 	public void quitter() {
-
+		// Start of user code for quitter
 		//On veut fermer toutes les fenetres ouvertes
 		Display.getCurrent().dispose();
-
+		// End of user code for quitter
 	}
 
 

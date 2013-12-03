@@ -58,6 +58,38 @@ public class ClientView extends Shell implements IClientView {
 		setSize(458, 308);
 		setLayout(new GridLayout(2, false));
 
+
+		Label lblNom = new Label(this, SWT.NONE);
+		lblNom.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false,
+				1, 1));
+		lblNom.setText("Nom");
+
+		Text nomField = new Text(this, SWT.BORDER);
+		nomField.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true,
+				false, 1, 1));
+		nomField.setText(this.model.getNom());
+	
+		Label lblPrenom = new Label(this, SWT.NONE);
+		lblPrenom.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false,
+				1, 1));
+		lblPrenom.setText("Prenom");
+
+		Text prenomField = new Text(this, SWT.BORDER);
+		prenomField.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true,
+				false, 1, 1));
+		prenomField.setText(this.model.getPrenom());
+	
+		Label lblAdresse = new Label(this, SWT.NONE);
+		lblAdresse.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false,
+				1, 1));
+		lblAdresse.setText("Adresse");
+
+		Text adresseField = new Text(this, SWT.BORDER);
+		adresseField.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true,
+				false, 1, 1));
+		adresseField.setText(this.model.getAdresse());
+	
+
 		// Liste
 
 		Group grpCompte = new Group(this, SWT.NONE);

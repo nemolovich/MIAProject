@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE PACKAGE SYSTEM "package.dtd">
+<PACKAGE NAME="main" METAMODEL="MVC" NUMBER="1"
+ DOCUMENTATION="">
+	<fileHeader version="5" toolName="Mia-Generation" toolVersion="9.0.0"/>
+	<SCENARIO NAME="ControlerScenario" VISIBILITY="private" META_OBJECT="UIApplication" CATEGORY="default" DOCUMENTATION="">
+		<SERVICE_CALL NAME="pages" PACKAGE="System" META_OBJECT="UIApplication"/>
+		<GENERATION_STEP TYPE="Scenario" PACKAGE="controler" META_OBJECT="View" NAME="ControlerCreation"/>
+	</SCENARIO>
+	<SCENARIO NAME="Genrate" VISIBILITY="public" META_OBJECT="UIApplication" CATEGORY="default" DOCUMENTATION="">
+		<SERVICE_CALL NAME="current" PACKAGE="System" META_OBJECT="UIApplication"/>
+		<GENERATION_STEP TYPE="Scenario" PACKAGE="main" META_OBJECT="UIApplication" NAME="ModelScenario"/>
+		<GENERATION_STEP TYPE="Scenario" PACKAGE="main" META_OBJECT="UIApplication" NAME="ViewScenario"/>
+		<GENERATION_STEP TYPE="Scenario" PACKAGE="main" META_OBJECT="UIApplication" NAME="ControlerScenario"/>
+	</SCENARIO>
+	<SCENARIO NAME="ModelScenario" VISIBILITY="private" META_OBJECT="UIApplication" CATEGORY="default" DOCUMENTATION="">
+		<SERVICE_CALL NAME="getAllModels" PACKAGE="main" META_OBJECT="UIApplication"/>
+		<GENERATION_STEP TYPE="Scenario" PACKAGE="model" META_OBJECT="Model" NAME="ModelCreation"/>
+	</SCENARIO>
+	<SCENARIO NAME="ViewScenario" VISIBILITY="private" META_OBJECT="UIApplication" CATEGORY="default" DOCUMENTATION="">
+		<SERVICE_CALL NAME="pages" PACKAGE="System" META_OBJECT="UIApplication"/>
+		<GENERATION_STEP TYPE="Scenario" PACKAGE="view" META_OBJECT="View" NAME="ViewCreation"/>
+	</SCENARIO>
+	<SERVICE_MACRO NAME="getAllModels" META_OBJECT="UIApplication" CATEGORY="default" RETURN_TYPE="UIApplication">
+		<TEXT><![CDATA[
+return (List<Model>)manager.allOfClass("Model");
+]]></TEXT>
+	</SERVICE_MACRO>
+</PACKAGE>

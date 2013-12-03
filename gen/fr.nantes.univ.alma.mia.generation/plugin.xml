@@ -1,7 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.4"?>
-<plugin>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?><plugin>
    <extension point="com.mia.studio.generation.core.generation_package">
-      <package file="miaStudio/resources/interfaces.pkg"/>
+      <package file="miaStudio/resources/model.pkg"/>
+   </extension>
+   
+   <extension point="com.mia.studio.generation.core.generation_package">
+      <package file="miaStudio/resources/main.pkg"/>
+   </extension>
+   <extension point="com.mia.studio.generation.core.generation_package">
+      <package file="miaStudio/resources/controler.pkg"/>
+   </extension>
+   <extension point="com.mia.studio.generation.core.generation_package">
+      <package file="miaStudio/resources/view.pkg"/>
+   </extension>
+   
+   <extension point="com.mia.studio.generation.core.generation_package">
+      <package file="miaStudio/resources/tests.pkg"/>
    </extension>
 </plugin>

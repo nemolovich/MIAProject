@@ -5,34 +5,33 @@ import com.mia.banque.model.impl.Client;
 import com.mia.banque.model.impl.Compte;
 import com.mia.banque.model.impl.Operation;
 
-
 public class BanqueTest {
 
 	public static Banque createTestBanque() {
-		
-	    Compte compte;
 
 	    Banque banque = new Banque();
 
-	    Client client1 = new Client();
-	    client1.setNom("Dupont");
-	    client1.setPrenom("Jean");
-	    client1.setAdresse("Paris");
-	    
-	    Client client2 = new Client();
-	    client2.setNom("Durant");
-	    client2.setPrenom("Pierre");
-	    client2.setAdresse("Lyon");
+		Client client1 = new Client();
+		client1.setNom("Dupont");
+		client1.setPrenom("Jean");
+		client1.setAdresse("Paris");
+		banque.getClients().add(client1);
 
-	    banque.getClients().add(client1);
-	    banque.getClients().add(client2);
+
+		Client client2 = new Client();
+		client2.setNom("Durant");
+		client2.setPrenom("Pierre");
+		client2.setAdresse("Lyon");
+		banque.getClients().add(client2);
+
+
 
 	    // Client 1
 
-	    compte = new Compte();
-	    compte.setNumero("123456");
+	    Compte compte1 = new Compte();
+	    compte1.setNumero("123456");
 	    
-	    client1.getComptes().add(compte);
+	    client1.getComptes().add(compte1);
 	    
     	Operation credit = new Operation();
     	credit.setMontant("1000");
@@ -46,17 +45,17 @@ public class BanqueTest {
     	debit2.setMontant("-400");
     	debit2.setNumero("Loyer");
     	
-    	compte.getOperations().add(credit);
-    	compte.getOperations().add(debit1);
-    	compte.getOperations().add(debit2);
+    	compte1.getOperations().add(credit);
+    	compte1.getOperations().add(debit1);
+    	compte1.getOperations().add(debit2);
 
 
 	    // Client 2
 	    
-	    compte = new Compte();
-	    compte.setNumero("789123");
+	    Compte compte2 = new Compte();
+	    compte2.setNumero("789123");
 	    
-	    client2.getComptes().add(compte);
+	    client2.getComptes().add(compte2);
 	    
     	credit = new Operation();
     	credit.setMontant("400");
@@ -66,8 +65,8 @@ public class BanqueTest {
     	debit1.setMontant("-300");
     	debit1.setNumero("Electricite");
 
-    	compte.getOperations().add(credit);
-    	compte.getOperations().add(debit1);
+    	compte2.getOperations().add(credit);
+    	compte2.getOperations().add(debit1);
 
 
 	    return banque;

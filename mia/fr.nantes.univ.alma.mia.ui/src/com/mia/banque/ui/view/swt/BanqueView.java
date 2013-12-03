@@ -58,6 +58,8 @@ public class BanqueView extends Shell implements IBanqueView {
 		setSize(458, 308);
 		setLayout(new GridLayout(2, false));
 
+
+
 		// Liste
 
 		Group grpClient = new Group(this, SWT.NONE);

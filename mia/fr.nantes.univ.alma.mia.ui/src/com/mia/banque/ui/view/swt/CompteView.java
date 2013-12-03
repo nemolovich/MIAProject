@@ -58,6 +58,18 @@ public class CompteView extends Shell implements ICompteView {
 		setSize(458, 308);
 		setLayout(new GridLayout(2, false));
 
+
+		Label lblNumero = new Label(this, SWT.NONE);
+		lblNumero.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false,
+				1, 1));
+		lblNumero.setText("Numero");
+
+		Text numeroField = new Text(this, SWT.BORDER);
+		numeroField.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true,
+				false, 1, 1));
+		numeroField.setText(this.model.getNumero());
+	
+
 		// Liste
 
 		Group grpOperation = new Group(this, SWT.NONE);

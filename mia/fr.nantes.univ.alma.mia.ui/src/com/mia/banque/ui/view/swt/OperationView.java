@@ -51,12 +51,34 @@ public class OperationView extends Shell implements IOperationView {
 		setSize(458, 308);
 		setLayout(new GridLayout(2, false));
 
+
+		Label lblNumero = new Label(this, SWT.NONE);
+		lblNumero.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false,
+				1, 1));
+		lblNumero.setText("Numero");
+
+		Text numeroField = new Text(this, SWT.BORDER);
+		numeroField.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true,
+				false, 1, 1));
+		numeroField.setText(this.model.getNumero());
+	
+		Label lblMontant = new Label(this, SWT.NONE);
+		lblMontant.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false,
+				1, 1));
+		lblMontant.setText("Montant");
+
+		Text montantField = new Text(this, SWT.BORDER);
+		montantField.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true,
+				false, 1, 1));
+		montantField.setText(this.model.getMontant());
+	
+
 		// Liste
 
 		
 		Group grpButtons = new Group(this, SWT.NONE);
-		grpButtons.setLayout(new GridLayout(1, false));
-		grpButtons.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
+		grpButtons.setLayout(new GridLayout(2, false));
+		grpButtons.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 2, 1));
 
 
 		this.btnQuitter = new Button(grpButtons, SWT.NONE);

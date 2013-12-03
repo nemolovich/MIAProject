@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE PACKAGE SYSTEM "package.dtd">
+<PACKAGE NAME="tests" METAMODEL="MVC" NUMBER="11"
+ DOCUMENTATION="">
+	<fileHeader version="5" toolName="Mia-Generation" toolVersion="9.0.0"/>
+	<SCENARIO NAME="TestCreation" VISIBILITY="public" META_OBJECT="UIApplication" CATEGORY="default" DOCUMENTATION="">
+		<SERVICE_CALL NAME="current" PACKAGE="System" META_OBJECT="UIApplication"/>
+		<GENERATION_STEP TYPE="FileTemplate" PACKAGE="tests" META_OBJECT="UIApplication" CATEGORY="default" NAME="BanqueTestCreation" PARAM_COUNT="0"/>
+		<GENERATION_STEP TYPE="FileTemplate" PACKAGE="tests" META_OBJECT="UIApplication" CATEGORY="default" NAME="BusinessViewTest" PARAM_COUNT="0"/>
+	</SCENARIO>
+	<TEXT_MACRO NAME="CreateTestClient" META_OBJECT="Model" CATEGORY="implementation" RETURN_TYPE_KIND="primitive" RETURN_TYPE_NAME="String">
+		<TEXT><![CDATA[
+String client="\t\tClient "+id+" = new Client();\n";
+client +="\t\t"+id+".setNom(\""+name+"\");\n";
+client +="\t\t"+id+".setPrenom(\""+firstName+"\");\n";
+client +="\t\t"+id+".setAdresse(\""+city+"\");\n";
+client +="\t\t"+banque_id+".getClients().add("+id+");\n\n";
+return client;
+]]></TEXT>
+		<PARAMETER NAME="id" TYPE_KIND="primitive" TYPE_NAME="String"/>
+		<PARAMETER NAME="name" TYPE_KIND="primitive" TYPE_NAME="String"/>
+		<PARAMETER NAME="firstName" TYPE_KIND="primitive" TYPE_NAME="String"/>
+		<PARAMETER NAME="city" TYPE_KIND="primitive" TYPE_NAME="String"/>
+		<PARAMETER NAME="banque_id" TYPE_KIND="primitive" TYPE_NAME="String"/>
+	</TEXT_MACRO>
+	<SCRIPT NAME="ModelImportDecl" META_OBJECT="Model" CATEGORY="implementation">
+		<TEXT><![CDATA[
+import com.mia.banque.model.impl.[[name]];
+
+]]></TEXT>
+	</SCRIPT>
+	<SCRIPT NAME="TestImplementation" META_OBJECT="Model" CATEGORY="implementation">
+		<TEXT><![CDATA[
+public static [[name]] createTest[[name]]() {
+
+	    [[name]] banque = new [[name]]();
+
+[[CreateTestClient("client1", "Dupont", "Jean", "Paris", "banque")]]
+[[CreateTestClient("client2", "Durant", "Pierre", "Lyon", "banque")]]
+
+	    // Client 1
+
+	    Compte compte1 = new Compte();
+	    compte1.setNumero("123456");
+	    
+	    client1.getComptes().add(compte1);
+	    
+    	Operation credit = new Operation();
+    	credit.setMontant("1000");
+    	credit.setNumero("Salaire");
+    	
+    	Operation debit1 = new Operation();
+    	debit1.setMontant("-100");
+    	debit1.setNumero("Telephone");
+
+    	Operation debit2 = new Operation();
+    	debit2.setMontant("-400");
+    	debit2.setNumero("Loyer");
+    	
+    	compte1.getOperations().add(credit);
+    	compte1.getOperations().add(debit1);
+    	compte1.getOperations().add(debit2);
+
+
+	    // Client 2
+	    
+	    Compte compte2 = new Compte();
+	    compte2.setNumero("789123");
+	    
+	    client2.getComptes().add(compte2);
+	    
+    	credit = new Operation();
+    	credit.setMontant("400");
+    	credit.setNumero("Loto");
+    	
+    	debit1 = new Operation();
+    	debit1.setMontant("-300");
+    	debit1.setNumero("Electricite");
+
+    	compte2.getOperations().add(credit);
+    	compte2.getOperations().add(debit1);
+
+
+	    return banque;
+	}
+]]></TEXT>
+	</SCRIPT>
+	<TEXT_MACRO NAME="AllModelsImport" META_OBJECT="UIApplication" CATEGORY="default" RETURN_TYPE_KIND="primitive" RETURN_TYPE_NAME="String">
+		<TEXT><![CDATA[
+return manager.apply((List<Model>)manager.action(current, "getAllModels"), "ModelImportDecl");
+]]></TEXT>
+	</TEXT_MACRO>
+	<SCRIPT NAME="BanqueTestCreation" META_OBJECT="UIApplication" CATEGORY="default" FILE_ENCODING="UTF-8" VISIBILITY="private">
+		<TEXT><![CDATA[
+package com.mia.banque.model.impl;
+
+[[AllModelsImport]]
+public class [[ModelName]]Test {
+
+	[[ModelTest]]
+}
+
+]]></TEXT>
+		<PROPERTY NAME="Filename"/>
+	</SCRIPT>
+	<SCRIPT NAME="BanqueTestCreation$Filename" META_OBJECT="UIApplication" CATEGORY="default">
+		<TEXT><![CDATA[
+com/mia/banque/model/impl/[[ModelName]]Test.java
+]]></TEXT>
+	</SCRIPT>
+	<SCRIPT NAME="BusinessViewTest" META_OBJECT="UIApplication" CATEGORY="default" FILE_ENCODING="UTF-8" VISIBILITY="private">
+		<TEXT><![CDATA[
+package com.mia.banque.model.impl;
+
+import com.mia.banque.model.impl.[[ModelName]]Test;
+import com.mia.banque.model.impl.[[ModelName]];
+import com.mia.banque.ui.controler.swt.[[ModelName]]Controler;
+
+
+public class BusinessViewProtoLauncher {
+
+	public static void main(String[] args) {
+		[[ModelName]] [[lowerModelName]]Test = [[ModelName]]Test.createTest[[ModelName]]();
+		[[ModelName]]Controler [[lowerModelName]]Controler = new [[ModelName]]Controler([[lowerModelName]]Test);
+		[[lowerModelName]]Controler.initView();
+	}
+
+}
+]]></TEXT>
+		<PROPERTY NAME="Filename"/>
+	</SCRIPT>
+	<SCRIPT NAME="BusinessViewTest$Filename" META_OBJECT="UIApplication" CATEGORY="default">
+		<TEXT><![CDATA[
+com/mia/banque/model/impl/BusinessViewProtoLauncher.java
+]]></TEXT>
+	</SCRIPT>
+	<TEXT_MACRO NAME="ModelName" META_OBJECT="UIApplication" CATEGORY="default" RETURN_TYPE_KIND="primitive" RETURN_TYPE_NAME="String">
+		<TEXT><![CDATA[
+return current.getModels().get(0).getName();
+]]></TEXT>
+	</TEXT_MACRO>
+	<TEXT_MACRO NAME="ModelTest" META_OBJECT="UIApplication" CATEGORY="default" RETURN_TYPE_KIND="primitive" RETURN_TYPE_NAME="String">
+		<TEXT><![CDATA[
+return manager.apply(current.getModels(), "TestImplementation");
+]]></TEXT>
+	</TEXT_MACRO>
+	<TEXT_MACRO NAME="lowerModelName" META_OBJECT="UIApplication" CATEGORY="default" RETURN_TYPE_KIND="primitive" RETURN_TYPE_NAME="String">
+		<TEXT><![CDATA[
+String name=current.getModels().get(0).getName();
+name=(name.charAt(0)+"").toLowerCase()+name.substring(1,name.length());
+return name;
+]]></TEXT>
+	</TEXT_MACRO>
+</PACKAGE>

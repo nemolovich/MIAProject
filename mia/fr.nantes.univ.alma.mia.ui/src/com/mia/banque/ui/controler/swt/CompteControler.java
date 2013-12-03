@@ -35,7 +35,7 @@ public class CompteControler implements ICompteControler {
 
 
 	public void afficherOperation() {
-
+		// Start of user code for afficherOperation
 		if (this.view.operationsList.getSelection().length >0) {
 			String operationSelection = this.view.operationsList.getSelection()[0];
 			for (final IOperation aOperation : this.model.getOperations()) {
@@ -45,15 +45,14 @@ public class CompteControler implements ICompteControler {
 				}
 			}
 		}
-
-
+		// End of user code for afficherOperation
 	}
 
 	public void quitter() {
-
+		// Start of user code for quitter
 		//On veut fermer toutes les fenetres ouvertes
 		Display.getCurrent().dispose();
-
+		// End of user code for quitter
 	}
 
 

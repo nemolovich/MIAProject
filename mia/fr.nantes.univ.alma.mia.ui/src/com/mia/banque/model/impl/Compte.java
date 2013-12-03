@@ -39,4 +39,9 @@ public class Compte implements ICompte {
 	}
 
 
+	@Override
+	public String toString() {
+		return "[" + "Numero = " + this.numero+ "]";
+	}
+
 }

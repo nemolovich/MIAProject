@@ -33,4 +33,9 @@ public class Operation implements IOperation {
 
 
 
+	@Override
+	public String toString() {
+		return "[" + "Numero = " + this.numero + ", Montant = " + this.montant+ "]";
+	}
+
 }

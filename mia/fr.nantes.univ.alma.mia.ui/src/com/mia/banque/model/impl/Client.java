@@ -61,4 +61,9 @@ public class Client implements IClient {
 	}
 
 
+	@Override
+	public String toString() {
+		return "[" + "Nom = " + this.nom + ", Prenom = " + this.prenom + ", Adresse = " + this.adresse+ "]";
+	}
+
 }
