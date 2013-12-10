@@ -1,4 +1,4 @@
-package com.mia.banque.model.impl;
+package com.mia.banque.model.tests;
 
 import com.mia.banque.model.impl.Banque;
 import com.mia.banque.model.impl.Client;

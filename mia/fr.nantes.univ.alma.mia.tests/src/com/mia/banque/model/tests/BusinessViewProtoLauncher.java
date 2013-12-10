@@ -1,6 +1,6 @@
-package com.mia.banque.model.impl;
+package com.mia.banque.model.tests;
 
-import com.mia.banque.model.impl.BanqueTest;
+import com.mia.banque.model.tests.BanqueTest;
 import com.mia.banque.model.impl.Banque;
 import com.mia.banque.ui.controler.swt.BanqueControler;
 
